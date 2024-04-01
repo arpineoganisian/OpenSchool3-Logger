@@ -1,4 +1,4 @@
-package com.example.openschool3logger.aop;
+package com.example.openschool3logger.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -18,7 +18,7 @@ public class LoggingAspect {
     static final Logger log = LogManager.getLogger(LoggingAspect.class.getName());
 
     // все public методы OrderService с любым типом возврата * и количеством аргументов (..)
-    @Pointcut("execution(public * com.example.openschool3logger.service.OrderService.*(..))")
+    @Pointcut("execution(public * com.example.openschool3logger.service.*.*(..))")
     public void callAtOrderServicePublic() {}
 
     @Before("callAtOrderServicePublic()")
